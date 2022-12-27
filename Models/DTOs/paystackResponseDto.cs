@@ -1,0 +1,9 @@
+﻿namespace indexPay.DTO
+{
+    public class paystackResponseDto
+    {
+        public bool status { get; set; }
+        public string message { get; set; }
+        public object data { get; set; }    
+}
+}
