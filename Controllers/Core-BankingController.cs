@@ -28,6 +28,13 @@ namespace indexPay.Controllers
             _memCache = memCache;
         }
 
+
+
+        /// <summary>
+        /// // A WebHook Endpoint is required to receive Transfer Updates from Proiders .
+        /// </summary>
+
+
         [HttpGet]
         [Route("banks")]
         [ProducesResponseType(StatusCodes.Status201Created)]
