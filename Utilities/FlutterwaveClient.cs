@@ -22,7 +22,7 @@ namespace indexPay.Utilities
         public FlutterwaveClient(IConfiguration configuration)
         {
             _config = configuration;
-            _flutterWaveSecretKey = _config.GetSection("FlutterwaveSecretKeyLive").Value;
+            _flutterWaveSecretKey = _config.GetSection("FlutterwaveSecretKey").Value;
             var options = new RestClientOptions(_config.GetSection("FlutterwaveUrl").Value)
             {
                 ThrowOnAnyError = false
