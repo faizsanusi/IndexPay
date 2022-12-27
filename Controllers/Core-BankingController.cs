@@ -44,7 +44,7 @@ namespace indexPay.Controllers
                 var banks = await _corebanking.getBanksList(provider);
                 if (banks.Error)
                     return BadRequest(new ResponseMessage { Error = true, Description = "Error While Fetching Banks List", ErrorCode = "99" });
-                return Ok(new ResponseMessage { Error = false, Description = "success", Data = banks });
+                return Ok(new ResponseMessage { Error = false, Description = "success", Data = banks.Data });
             }
             catch (Exception ex)
             {
@@ -59,7 +59,7 @@ namespace indexPay.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> validateBankAccount([FromHeader] string ApiKey, validateBankAccountDTO request)
+        public async Task<IActionResult> CheckBankAccounts([FromHeader] string ApiKey, validateBankAccountDTO request)
         {
             try
             {

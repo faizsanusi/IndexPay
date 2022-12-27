@@ -21,7 +21,7 @@ namespace indexPay.Utilities
         public PaystackClient(IConfiguration configuration)
         {
             _config = configuration;
-            _paystackSecretKey = _config.GetSection("PayStackSecretkey").Value;
+            _paystackSecretKey = _config.GetSection("PayStackSecretkeyLive").Value;
             var options = new RestClientOptions(_config.GetSection("PayStackUrl").Value)
             {
                 ThrowOnAnyError = false

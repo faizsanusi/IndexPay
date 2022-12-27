@@ -59,9 +59,9 @@ namespace indexPay.Services
 
         public async Task<ResponseMessage> validateBankAccount(validateBankAccountDTO validator)
         {
-            var request = providerStrategy(validator.provider);
+            var request = providerStrategy(null);
 
-            var validateAccount = await request.validateBankAccount(request);
+            var validateAccount = await request.validateBankAccount(validator);
 
             if (validateAccount == null || validateAccount.Error)
                 return new ResponseMessage { Error = true };
