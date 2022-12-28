@@ -18,11 +18,11 @@ namespace indexPay.Utilities
         }
 
 
-        public async Task<flutterwaveTransferResponseDTO> FlutterwaveTransfer(flutterwaveTransferRequestDTO request)
+        public async Task<flutterwaveTransferResponseDTO> FlutterwaveTransfer(flutterwaveTransferRequestDTO request, int retryCount = 0)
         {
             try
             {
-                var JsonResponse = await _flutterwaveClient.PostAsync<flutterwaveTransferResponseDTO>("https://api.flutterwave.com/v3/transfers", request, 0);
+                var JsonResponse = await _flutterwaveClient.PostAsync<flutterwaveTransferResponseDTO>("https://api.flutterwave.com/v3/transfers", request, retryCount);
                 return JsonResponse;
             }
             catch (Exception)

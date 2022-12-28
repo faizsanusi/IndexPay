@@ -112,7 +112,7 @@ namespace indexPay.Utilities
                     currency = transfer.currencyCode,
                     narration = transfer.narration,
                     reference = transfer.transactionReference
-                });
+                }, transfer.maxRetryAttempt);
 
                 if (InitiateTransfer is null || InitiateTransfer.status != "success")
                     return new ResponseMessage { Error = true, Description = "Error Occurred while Initiating Transfer", ErrorCode = "99" };

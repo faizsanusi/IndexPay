@@ -9,7 +9,7 @@
         public string beneficiaryAccountName { get; set; }
         public string beneficiaryBankCode { get; set; }
         public string transactionReference { get; set; }
-        public int maxRetryAttempt { get; set; }
+        public int maxRetryAttempt { get; set; } = 0;
         public string callBackUrl { get; set; } = null;
         public string provider { get; set; } = null;
     }

@@ -6,7 +6,7 @@ namespace indexPay.Utilities.IUtilities
 {
     public interface IFlutterWaveAPI
     {
-        Task<flutterwaveTransferResponseDTO> FlutterwaveTransfer(flutterwaveTransferRequestDTO request);
+        Task<flutterwaveTransferResponseDTO> FlutterwaveTransfer(flutterwaveTransferRequestDTO request, int retryCount = 0);
         Task<flutterwaveBanksListResponseDTO> FlutterwaveGetBanksList();
         Task<FlutterwaveResolveAccountNumberResponseDTO> FlutterwaveResolveAccount(FlutterwaveResolveAccountRequestDTO request);
         Task<flutterwaveTransactionStatusResponseDTO> FlutterwaveTransactionStatus(string reference);
